@@ -1,0 +1,66 @@
+config:
+  query: "query.sql"
+  measurement_iterations: 5
+
+locations:
+  - name: local
+    databases:
+      - name: postgres
+        db_type: POSTGRESQL
+        db_name: tiger
+        host: localhost
+        jdbc_driver_class: org.postgresql.Driver
+        jdbc_url: jdbc:postgresql://localhost:5432/tiger
+        odbc_driver_path: /usr/lib/x86_64-linux-gnu/odbc/psqlodbcw.so
+        port: 5432
+        user: postgres
+        password: PERFJDBC_DEFAULT_PASSWORD
+        measurement_duration: 15
+        bottom_limit: 1000
+        top_limit: 10000
+#      - name: vertica
+#        db_type: VERTICA
+#        db_name: tiger
+#        host: localhost
+#        jdbc_driver_class: com.vertica.jdbc.Driver
+#        jdbc_url: jdbc:vertica://localhost:5433/tiger
+#        odbc_driver_path: ./db-drivers/VERTICA/libverticaodbc.so
+#        port: 5433
+#        user: tiger
+#        password: PERFJDBC_DEFAULT_PASSWORD
+#        measurement_duration: 15
+##        bottom_limit: 1000
+##        top_limit: 10000
+#  - name: eu-central-1
+#    databases:
+#      - name: postgres
+#        db_type: POSTGRESQL
+#        db_name: tiger
+#        host: postgres-tiger-tests.cac7gzwpntec.eu-central-1.rds.amazonaws.com
+#        jdbc_driver_class: org.postgresql.Driver
+#        jdbc_url: jdbc:postgresql://postgres-tiger-tests.cac7gzwpntec.eu-central-1.rds.amazonaws.com:5432/tiger
+#        odbc_driver_path: /usr/lib/x86_64-linux-gnu/odbc/psqlodbcw.so
+#        password: PERFJDBC_EU_CENTRAL_POSTGRES_PASSWORD
+#        port: 5432
+#        user: tiger
+#        measurement_duration: 15
+##        bottom_limit: 1000
+##        top_limit: 10000
+#      - name: snowflake
+#        db_type: SNOWFLAKE
+#        db_name: TIGER
+#        warehouse: TIGER
+#        account: hqltkfn-gooddata_eu_central1
+#        host: hqltkfn-gooddata_eu_central1.snowflakecomputing.com
+#        port: 443
+#        jdbc_driver_class: net.snowflake.client.jdbc.SnowflakeDriver
+#        jdbc_url: jdbc:snowflake://hqltkfn-gooddata_eu_central1.snowflakecomputing.com:443/?warehouse=TIGER&db=TIGER
+#        odbc_driver_path: /usr/lib/snowflake/odbc/lib/libSnowflake.so
+#        user: jacek
+#        password: PERFJDBC_EU_CENTRAL_SNOWFLAKE_PASSWORD
+#        measurement_duration: 15
+#        # Snowflake does not support ADBC in Java yet
+#        # https://github.com/apache/arrow-adbc/issues/1621
+#        connection_types: ["JDBC", "JDBC_ARROW"]
+##        bottom_limit: 1000
+##        top_limit: 10000

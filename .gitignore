@@ -1,0 +1,5 @@
+.env
+dependency-reduced-pom.xml
+query_final.sql
+target
+results/
